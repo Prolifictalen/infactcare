@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../Assets/logo.svg"; // Replace with your actual logo file
 import { HiOutlineBars3 } from "react-icons/hi2"; // Mobile menu icon
-import { Link, useLocation } from "react-router-dom";
 import {
   Box,
   Drawer,
