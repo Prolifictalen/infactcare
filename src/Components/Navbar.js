@@ -32,28 +32,49 @@ const Navbar = () => {
         <img className="logo" src={Logo} alt="Giggles & Growth" />
       </div>
 
-      {/* Hamburger Menu Button */}
-      <div className="nav-menu-container" onClick={() => setMenuOpen(!menuOpen)}>
-        <HiOutlineBars3 aria-label="Menu button" />
+      {/* Desktop Links */}
+      <div className="nav-links-container">
+        {menuOptions.map((menu) => (
+          <Link
+            key={menu.text}
+            to={menu.path}
+            className={`nav-link ${
+              location.pathname === menu.path ? "active-link" : ""
+            }`}
+          >
+            {menu.text}
+          </Link>
+        ))}
       </div>
 
-      {/* Dropdown Menu */}
-      {menuOpen && (
-        <div className="nav-menu-dropdown">
-          {menuOptions.map((menu) => (
-            <Link
-              key={menu.text}
-              to={menu.path}
-              className="nav-link"
-              onClick={() => setMenuOpen(false)} // Close menu on link click
-            >
-              {menu.text}
-            </Link>
-          ))}
-        </div>
-      )}
+      {/* Mobile Menu Button */}
+      <div className="nav-menu-container">
+        <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
+      </div>
 
-      
+      {/* Mobile Drawer Menu */}
+      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
+        <Box
+          sx={{ width: 250 }}
+          role="presentation"
+          onClick={() => setOpenMenu(false)}
+        >
+          <List>
+            {menuOptions.map((menu) => (
+              <ListItem key={menu.text} disablePadding>
+                <ListItemButton component={Link} to={menu.path}>
+                  <ListItemText
+                    primary={menu.text}
+                    className={`${
+                      location.pathname === menu.path ? "active-link" : ""
+                    }`}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
     </nav>
   );
 };
