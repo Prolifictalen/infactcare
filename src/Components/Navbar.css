@@ -7,7 +7,7 @@
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 1000; /* Keep navbar above other elements */
+  z-index: 1000;
 }
 
 /* Logo Styling */
@@ -47,34 +47,48 @@
 }
 
 .nav-menu-container svg {
-  font-size: 24px;
+  font-size: 36px; /* Larger hamburger icon */
   color: #4c4c4c;
 }
 
-/* Mobile Menu Dropdown */
-.nav-menu-container.active {
+/* Mobile Dropdown Menu */
+.nav-menu-dropdown {
+  display: none; /* Hidden by default */
   position: absolute;
   top: 100%; /* Position right below the navbar */
   left: 0;
   width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
+  z-index: 999;
   flex-direction: column;
   align-items: center;
+  padding: 10px 0;
 }
 
-.nav-menu-container.active .nav-link {
-  padding: 10px 20px;
+.nav-menu-dropdown.active {
+  display: flex; /* Show the menu */
+}
+
+/* Dropdown Links */
+.nav-menu-dropdown .nav-link {
+  padding: 15px 20px;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #ddd; /* Add divider between links */
+  font-size: 18px;
+  color: #4c4c4c;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Drawer Active Link */
-.MuiDrawer-root .active-link {
+.nav-menu-dropdown .nav-link:last-child {
+  border-bottom: none;
+}
+
+/* Hover Effect */
+.nav-menu-dropdown .nav-link:hover {
+  background-color: #f6f6f6;
   color: #734c29;
-  font-weight: bold;
 }
 
 /* Responsive Design for Mobile */
@@ -84,23 +98,6 @@
   }
 
   .nav-menu-container {
-    display: block; /* Show hamburger menu */
-  }
-
-  .nav-menu-container.active {
-    display: flex; /* Ensure the menu dropdown is visible */
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links-container {
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center the links */
-  }
-
-  .nav-link {
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 100%; /* Full width for mobile links */
+    display: block; /* Show hamburger menu button */
   }
 }
