@@ -1,0 +1,90 @@
+/* General Styling for About Section */
+.about-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Top Section - Dark Theme */
+.about-top {
+  background-color: #5a4235; /* Dark Brown */
+  color: white;
+  padding: 20px 10px;
+}
+
+.about-top h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about-top p {
+  font-size: 1.2rem;
+}
+
+/* Middle Section - Light Theme */
+.about-middle {
+  background-color: #f4eade; /* Light Beige */
+  padding: 30px 20px;
+  color: #4c4c4c;
+}
+
+.about-middle h2 {
+  font-size: 2rem;
+  color: #5a4235; /* Dark Brown for Heading */
+  margin-bottom: 20px;
+}
+
+.about-middle p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-middle strong {
+  font-size: 1.1rem;
+  color: #4c4c4c;
+}
+
+/* Bottom Section - Dark Theme */
+.about-bottom {
+  background-color: #5a4235; /* Dark Brown */
+  color: white;
+  padding: 20px 10px;
+}
+
+.about-bottom h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.about-bottom p {
+  font-size: 1rem;
+}
+
+/* Center Text */
+.about-text-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-top h1,
+  .about-middle h2,
+  .about-bottom h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-top p,
+  .about-middle p,
+  .about-bottom p {
+    font-size: 1rem;
+  }
+}

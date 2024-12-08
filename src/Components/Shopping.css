@@ -1,0 +1,94 @@
+/* Shopping Page Styles */
+.shopping-page-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .shopping-page-container h1 {
+    font-size: 2.5rem;
+    color: #4c4c4c;
+    margin-bottom: 20px;
+  }
+  
+  .shopping-description {
+    font-size: 1.2rem;
+    color: #6a6a6a;
+    margin-bottom: 40px;
+  }
+  
+  .shopping-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .shopping-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .shopping-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .shopping-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .shopping-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #4c4c4c;
+  }
+  
+  .shopping-card p {
+    font-size: 1rem;
+    color: #6a6a6a;
+    margin-bottom: 15px;
+  }
+  
+  .shopping-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #734c29;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shopping-link:hover {
+    background-color: #5a3d23;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .shopping-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .shopping-card {
+      width: 100%;
+    }
+  }
+  .shopping-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ensures the image fits nicely */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Optional: Rounded edges */
+  } 

@@ -1,0 +1,159 @@
+/* src/styles/about.css */
+
+/* Styles for the entire About component */
+.about-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the heading */
+.about-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Styles for paragraphs */
+.about-text {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* General Styles for Login and Signup Pages */
+body {
+    font-family: "Reem Kufi", sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form Container */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading for Forms */
+.form-heading {
+    font-size: 24px;
+    color: #734c29;
+    margin-bottom: 20px;
+}
+
+/* Form Structure */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Labels for Inputs */
+.form-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Inputs */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Buttons */
+.form-button {
+    background-color: #734c29;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.form-button:hover {
+    background-color: #5a3d23;
+}
+
+/* Footer for Forms */
+.form-footer {
+    margin-top: 15px;
+}
+
+.form-text {
+    font-size: 14px;
+    color: #6a6a6a;
+}
+
+/* Links in Forms */
+.form-link {
+    color: #734c29;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+.right-align {
+    float: right;
+    font-size: 12px;
+    color: #734c29;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .about-container,
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-heading {
+        font-size: 20px;
+    }
+
+    .form-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form-text {
+        font-size: 12px;
+    }
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
