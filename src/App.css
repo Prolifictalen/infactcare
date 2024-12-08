@@ -140,21 +140,25 @@ nav {
 }
 
 /* Footer */
+/* Footer */
 .footer {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: row; /* Default for larger screens */
+  justify-content: space-between; /* Space between sections */
+  align-items: flex-start; /* Align items to the top */
   background-color: #734c29;
   color: white;
   padding: 20px 40px;
-  flex-wrap: wrap; /* Allow wrapping for small screens */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
+/* Footer Sections */
 .footer-left,
 .footer-middle,
 .footer-right {
   flex: 1;
   margin-bottom: 1rem;
+  text-align: left; /* Default alignment for desktop */
 }
 
 .footer-left h3,
@@ -168,16 +172,45 @@ nav {
 .footer-middle ul,
 .footer-right p {
   font-size: 1rem;
+  line-height: 1.5; /* Improve readability */
 }
 
 .footer-middle ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-middle ul li {
   margin-bottom: 0.5rem;
 }
+
+/* Responsive Footer Styling for Mobile */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center text within each section */
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%; /* Take full width */
+    margin-bottom: 2rem; /* Add space between sections */
+  }
+
+  .footer-middle ul li {
+    margin-bottom: 1rem; /* Increase spacing for better touch usability */
+  }
+
+  .footer-left h3,
+  .footer-middle h4,
+  .footer-right h4 {
+    font-size: 1.2rem; /* Adjust font size for mobile */
+  }
+
+
 
 /* Responsive Styles */
 @media (max-width: 1023px) {
