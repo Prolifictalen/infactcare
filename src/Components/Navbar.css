@@ -47,13 +47,10 @@
   .nav-menu-container svg {
     font-size: 60px;
     color: #4c4c4c;
-  }
-  
-  /* Drawer Active Link */
-  .MuiDrawer-root .active-link {
-    color: #734c29;
     font-weight: bold;
   }
+  
+ 
   
   /* Responsive Design for Mobile */
   @media (max-width: 768px) {
