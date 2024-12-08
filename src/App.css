@@ -6,21 +6,20 @@
   font-family: "Reem Kufi", sans-serif !important;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  max-width: 100%; /* Restrict body width */
 }
 
 body {
-  max-width: 100%;
-  overflow-x: hidden;
   background-color: #f6f6f6;
 }
 
 .App {
   min-height: 100vh;
-  width: 90vw;
-  max-width: 1900px;
+  padding: 0 1rem; /* Add padding without causing overflow */
+  width: 100%;
+  max-width: 100%; /* Ensure no horizontal overflow */
   margin: 0 auto;
 }
 
@@ -30,15 +29,25 @@ nav {
   align-items: center;
   justify-content: space-between;
   max-height: 90px;
-  margin-top: 0px;
+  margin-top: 0;
+  flex-wrap: wrap; /* Ensure it wraps on small screens */
+}
+
+.nav-links-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow links to wrap */
+  justify-content: center;
+  max-width: 100%; /* Prevent horizontal overflow */
 }
 
 .nav-links-container a {
-  margin-right: 3rem;
+  margin: 0.5rem;
   text-decoration: none;
   color: black;
   font-size: 1.1rem;
   font-weight: 600;
+  flex: 1; /* Allow links to shrink */
+  text-align: center; /* Align links in the center */
 }
 
 .logo {
@@ -55,6 +64,7 @@ nav {
   justify-content: space-between;
   padding-top: 3rem;
   position: relative;
+  flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
 .home-text-section {
@@ -69,6 +79,7 @@ nav {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #4c4c4c;
   max-width: 600px;
+  text-align: left;
 }
 
 .description {
@@ -93,12 +104,12 @@ nav {
 
 .secondary-button svg {
   margin-left: 8px;
-  
 }
 
 .secondary-button:hover {
   background-color: #3e3232;
 }
+
 .button-container {
   margin-bottom: 40px; /* Adds space below the button */
 }
@@ -136,7 +147,7 @@ nav {
   background-color: #734c29;
   color: white;
   padding: 20px 40px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
 }
 
 .footer-left,
@@ -213,6 +224,21 @@ nav {
     flex: none;
     margin-bottom: 2rem;
   }
+
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .nav-links-container {
+    flex-direction: column;
+  }
+
+  .nav-links-container a {
+    margin: 10px 0;
+    font-size: 1rem;
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -228,7 +254,3 @@ nav {
     padding: 0.7rem 1.5rem;
   }
 }
-body {
-    overflow-x: hidden;
-}
-
