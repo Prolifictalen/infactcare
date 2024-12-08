@@ -23,7 +23,7 @@ const Navbar = () => {
 
       {/* Hamburger Menu Button */}
       <div className="nav-menu-container" onClick={() => setMenuOpen(!menuOpen)}>
-        <HiOutlineBars3 aria-label="Open menu" />
+        <HiOutlineBars3 aria-label="Menu button" />
       </div>
 
       {/* Dropdown Menu */}
