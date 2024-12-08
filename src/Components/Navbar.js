@@ -77,7 +77,7 @@ const Navbar = () => {
         aria-label="Mobile menu drawer"
       >
         <Box
-          sx={{ width: 400 }}
+          sx={{ width: 250 }}
           role="presentation"
           onClick={() => setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
