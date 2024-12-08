@@ -1,16 +1,46 @@
 /* General Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20px 40px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;
 }
 
+/* Top Links Row */
+.nav-top-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-top-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #4c4c4c;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-top-link:hover {
+  color: #734c29;
+}
+
+.nav-top-link.active-link {
+  font-weight: bold;
+  color: #734c29;
+}
+
 /* Logo Styling */
+.nav-logo-container {
+  margin: 10px 0;
+}
+
 .nav-logo-container .logo {
   height: 50px;
   cursor: pointer;
@@ -25,17 +55,15 @@
 .nav-link {
   text-decoration: none;
   font-size: 16px;
-  color: #4c4c4c; /* Default link color */
+  color: #4c4c4c;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-/* Highlight Active Link */
 .nav-link.active-link {
-  color: #734c29; /* Theme color for active link */
+  color: #734c29;
 }
 
-/* Hover Effect */
 .nav-link:hover {
   color: #734c29;
 }
@@ -47,84 +75,17 @@
 }
 
 .nav-menu-container svg {
-  font-size: 36px; /* Larger hamburger icon */
+  font-size: 36px;
   color: #4c4c4c;
-}
-
-/* Mobile Dropdown Menu */
-.nav-menu-dropdown {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%; /* Position right below the navbar */
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.nav-menu-dropdown.active {
-  display: flex; /* Show the menu */
-}
-
-/* Dropdown Links */
-.nav-menu-dropdown .nav-link {
-  padding: 15px 20px;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  color: #4c4c4c;
-  border-bottom: 1px solid #ddd;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-menu-dropdown .nav-link:last-child {
-  border-bottom: none;
-}
-
-/* Hover Effect */
-.nav-menu-dropdown .nav-link:hover {
-  background-color: #f6f6f6;
-  color: #734c29;
 }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .nav-links-container {
-    display: none; /* Hide desktop links */
+    display: none;
   }
 
   .nav-menu-container {
-    display: block; /* Show hamburger menu button */
+    display: block;
   }
 }
-/* Top Links Row */
-.nav-top-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8f8f8; /* Light background for the top row */
-  padding: 10px 0; /* Padding for spacing */
-  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
-}
-
-.nav-top-link {
-  text-decoration: none;
-  font-size: 14px;
-  color: #4c4c4c; /* Default text color */
-  margin: 0 15px; /* Spacing between links */
-  transition: color 0.3s ease;
-}
-
-.nav-top-link:hover {
-  color: #734c29; /* Change color on hover */
-}
-
-.nav-top-link.active-link {
-  font-weight: bold;
-  color: #734c29; /* Highlight active link */
-}
-
