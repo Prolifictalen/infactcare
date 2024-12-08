@@ -228,3 +228,7 @@ nav {
     padding: 0.7rem 1.5rem;
   }
 }
+body {
+    overflow-x: hidden;
+}
+
