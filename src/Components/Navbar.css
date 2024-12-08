@@ -1,84 +1,68 @@
 /* General Navbar Styling */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1000;
-}
-
-/* Logo Styling */
-.nav-logo-container {
-  flex: 1;
-  text-align: center; /* Center-align the logo */
-}
-
-.nav-logo-container .logo {
-  height: 50px;
-  cursor: pointer;
-}
-
-/* Hamburger Menu Button */
-.nav-menu-container {
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-}
-
-.nav-menu-container svg {
-  font-size: 36px; /* Larger hamburger icon */
-  color: #4c4c4c;
-}
-
-/* Dropdown Menu */
-.nav-menu-dropdown {
-  position: absolute;
-  top: 60px; /* Position right below the navbar */
-  right: 10px; /* Align to the right */
-  background-color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
-  z-index: 999;
-  display: flex;
-  flex-direction: column; /* Stack menu items vertically */
-  padding: 10px 0; /* Add padding to the dropdown */
-  width: 200px; /* Set a fixed width */
-  border-radius: 5px; /* Rounded corners for the dropdown */
-}
-
-/* Menu Items */
-.nav-link {
-  text-decoration: none;
-  font-size: 16px;
-  color: #4c4c4c;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-  background-color: #f6f6f6; /* Add hover effect */
-  color: #734c29; /* Change text color on hover */
-}
-
-.nav-link:first-child {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.nav-link:last-child {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .nav-links-container {
-    display: none;
-  }
-
-  .nav-menu-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-}
+  
+  /* Logo Styling */
+  .nav-logo-container .logo {
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  /* Desktop Links */
+  .nav-links-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #4c4c4c; /* Default link color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* Highlight Active Link */
+  .nav-link.active-link {
+    color: #734c29; /* Theme color for active link */
+  }
+  
+  /* Hover Effect */
+  .nav-link:hover {
+    color: #734c29;
+  }
+  
+  /* Mobile Menu Button */
+  .nav-menu-container {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .nav-menu-container svg {
+    font-size: 24px;
+    color: #4c4c4c;
+  }
+  
+  /* Drawer Active Link */
+  .MuiDrawer-root .active-link {
+    color: #734c29;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .nav-links-container {
+      display: none; /* Hide desktop links */
+    }
+  
+    .nav-menu-container {
+      display: block; /* Show hamburger menu */
+    }
+  }
+  
