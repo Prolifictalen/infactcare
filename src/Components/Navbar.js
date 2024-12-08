@@ -16,8 +16,11 @@ const Navbar = () => {
   const location = useLocation();
 
   const menuOptions = [
+    { text: "Home", path: "/" },
     { text: "About", path: "/about" },
     { text: "Contact", path: "/contact" },
+    { text: "Blog", path: "/blogt" },
+    { text: "Shopping", path: "/shopping" },
   ];
 
   return (
