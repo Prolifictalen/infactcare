@@ -101,3 +101,30 @@
     display: block; /* Show hamburger menu button */
   }
 }
+/* Top Links Row */
+.nav-top-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8; /* Light background for the top row */
+  padding: 10px 0; /* Padding for spacing */
+  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+}
+
+.nav-top-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #4c4c4c; /* Default text color */
+  margin: 0 15px; /* Spacing between links */
+  transition: color 0.3s ease;
+}
+
+.nav-top-link:hover {
+  color: #734c29; /* Change color on hover */
+}
+
+.nav-top-link.active-link {
+  font-weight: bold;
+  color: #734c29; /* Highlight active link */
+}
+
