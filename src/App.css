@@ -140,7 +140,6 @@ nav {
 }
 
 /* Footer */
-/* Footer */
 .footer {
   display: flex;
   flex-direction: row; /* Default for larger screens */
@@ -209,8 +208,7 @@ nav {
   .footer-right h4 {
     font-size: 1.2rem; /* Adjust font size for mobile */
   }
-
-
+}
 
 /* Responsive Styles */
 @media (max-width: 1023px) {
