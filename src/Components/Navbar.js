@@ -26,6 +26,21 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+      {/* Top Links Row */}
+      <div className="nav-top-links">
+        {menuOptions.map((menu) => (
+          <Link
+            key={menu.text}
+            to={menu.path}
+            className={`nav-top-link ${
+              location.pathname === menu.path ? "active-link" : ""
+            }`}
+          >
+            {menu.text}
+          </Link>
+        ))}
+      </div>
+
       {/* Logo */}
       <div className="nav-logo-container">
         <img className="logo" src={Logo} alt="Giggles & Growth" />
@@ -62,7 +77,7 @@ const Navbar = () => {
         aria-label="Mobile menu drawer"
       >
         <Box
-          sx={{ width: 250 }}
+          sx={{ width: 400 }}
           role="presentation"
           onClick={() => setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
