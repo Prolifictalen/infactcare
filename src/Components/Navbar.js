@@ -2,18 +2,9 @@ import React, { useState } from "react";
 import Logo from "../Assets/logo.svg"; // Replace with your actual logo file
 import { HiOutlineBars3 } from "react-icons/hi2"; // Mobile menu icon
 import { Link, useLocation } from "react-router-dom";
-import {
-  Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
-
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   const menuOptions = [
@@ -46,62 +37,27 @@ const Navbar = () => {
         <img className="logo" src={Logo} alt="Giggles & Growth" />
       </div>
 
-      {/* Desktop Links */}
-      <div className="nav-links-container">
+      {/* Mobile Menu Button */}
+      <div className="nav-menu-container">
+        <HiOutlineBars3
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Open menu"
+        />
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      <div className={`nav-menu-dropdown ${menuOpen ? "active" : ""}`}>
         {menuOptions.map((menu) => (
           <Link
             key={menu.text}
             to={menu.path}
-            className={`nav-link ${
-              location.pathname === menu.path ? "active-link" : ""
-            }`}
+            className="nav-link"
+            onClick={() => setMenuOpen(false)} // Close menu on link click
           >
             {menu.text}
           </Link>
         ))}
       </div>
-
-      {/* Mobile Menu Button */}
-      <div className="nav-menu-container">
-        <HiOutlineBars3
-          onClick={() => setOpenMenu(true)}
-          aria-label="Open menu"
-        />
-      </div>
-
-      {/* Mobile Drawer Menu */}
-      <Drawer
-        open={openMenu}
-        onClose={() => setOpenMenu(false)}
-        anchor="right"
-        aria-label="Mobile menu drawer"
-      >
-        <Box
-          sx={{ width: 250 }}
-          role="presentation"
-          onClick={() => setOpenMenu(false)}
-          onKeyDown={() => setOpenMenu(false)}
-        >
-          <List>
-            {menuOptions.map((menu) => (
-              <ListItem key={menu.text} disablePadding>
-                <ListItemButton
-                  component={Link}
-                  to={menu.path}
-                  onClick={() => setOpenMenu(false)} // Close menu on link click
-                >
-                  <ListItemText
-                    primary={menu.text}
-                    className={`${
-                      location.pathname === menu.path ? "active-link" : ""
-                    }`}
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
     </nav>
   );
 };
