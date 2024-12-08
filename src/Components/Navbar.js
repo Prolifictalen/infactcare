@@ -19,10 +19,7 @@ const Navbar = () => {
     { text: "Home", path: "/" },
     { text: "About", path: "/about" },
     { text: "Contact", path: "/contact" },
-    {
-      text: "Blog",
-      path: "/blog",
-    },
+    { text: "Blog", path: "/blog" },
     { text: "Shopping", path: "/shopping" },
   ];
 
@@ -50,20 +47,33 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <div className="nav-menu-container">
-        <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
+        <HiOutlineBars3
+          onClick={() => setOpenMenu(true)}
+          aria-label="Open menu"
+        />
       </div>
 
       {/* Mobile Drawer Menu */}
-      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
+      <Drawer
+        open={openMenu}
+        onClose={() => setOpenMenu(false)}
+        anchor="right"
+        aria-label="Mobile menu drawer"
+      >
         <Box
           sx={{ width: 250 }}
           role="presentation"
           onClick={() => setOpenMenu(false)}
+          onKeyDown={() => setOpenMenu(false)}
         >
           <List>
             {menuOptions.map((menu) => (
               <ListItem key={menu.text} disablePadding>
-                <ListItemButton component={Link} to={menu.path}>
+                <ListItemButton
+                  component={Link}
+                  to={menu.path}
+                  onClick={() => setOpenMenu(false)} // Close menu on link click
+                >
                   <ListItemText
                     primary={menu.text}
                     className={`${
