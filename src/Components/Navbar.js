@@ -44,20 +44,29 @@ const Navbar = () => {
           aria-label="Open menu"
         />
       </div>
-
-      {/* Mobile Dropdown Menu */}
-      <div className={`nav-menu-dropdown ${menuOpen ? "active" : ""}`}>
-        {menuOptions.map((menu) => (
-          <Link
-            key={menu.text}
-            to={menu.path}
-            className="nav-link"
-            onClick={() => setMenuOpen(false)} // Close menu on link click
-          >
-            {menu.text}
-          </Link>
-        ))}
-      </div>
+      {/* Mobile Drawer Menu */}
+      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
+        <Box
+          sx={{ width: 250 }}
+          role="presentation"
+          onClick={() => setOpenMenu(false)}
+        >
+          <List>
+            {menuOptions.map((menu) => (
+              <ListItem key={menu.text} disablePadding>
+                <ListItemButton component={Link} to={menu.path}>
+                  <ListItemText
+                    primary={menu.text}
+                    className={`${
+                      location.pathname === menu.path ? "active-link" : ""
+                    }`}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
     </nav>
   );
 };
