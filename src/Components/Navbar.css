@@ -13,7 +13,7 @@
 /* Logo Styling */
 .nav-logo-container {
   flex: 1;
-  text-align: center; /* Center the logo */
+  text-align: center; /* Center-align the logo */
 }
 
 .nav-logo-container .logo {
@@ -23,7 +23,6 @@
 
 /* Hamburger Menu Button */
 .nav-menu-container {
-  flex: 0;
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -37,17 +36,19 @@
 /* Dropdown Menu */
 .nav-menu-dropdown {
   position: absolute;
-  top: 100%; /* Below the navbar */
-  right: 10px; /* Align to the right */
+  top: 100%; /* Position right below the navbar */
+  right: 10px; /* Align the dropdown to the right */
   background-color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
   z-index: 999;
   display: flex;
-  flex-direction: column;
-  width: 200px; /* Fixed width for menu */
-  border-radius: 5px; /* Rounded corners */
+  flex-direction: column; /* Stack menu items vertically */
+  padding: 10px 0; /* Add padding to the dropdown */
+  width: 200px; /* Set a fixed width */
+  border-radius: 5px; /* Rounded corners for the dropdown */
 }
 
+/* Menu Items */
 .nav-link {
   text-decoration: none;
   font-size: 16px;
@@ -57,8 +58,8 @@
 }
 
 .nav-link:hover {
-  background-color: #f6f6f6;
-  color: #734c29;
+  background-color: #f6f6f6; /* Add hover effect */
+  color: #734c29; /* Change text color on hover */
 }
 
 .nav-link:first-child {
@@ -75,5 +76,9 @@
 @media (max-width: 768px) {
   .nav-links-container {
     display: none;
+  }
+
+  .nav-menu-container {
+    display: flex;
   }
 }
