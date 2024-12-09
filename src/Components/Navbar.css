@@ -9,10 +9,19 @@
 }
 
 /* Logo Styling */
+/* Center the Logo */
+.nav-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust if needed for the container height */
+}
+
 .nav-logo-container .logo {
   height: 50px;
   cursor: pointer;
 }
+
 
 /* Desktop Links */
 .nav-links-container {
