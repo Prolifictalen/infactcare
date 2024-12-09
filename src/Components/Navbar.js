@@ -21,8 +21,8 @@ const Navbar = () => {
         <Link to="/">
           <img
             className="logo"
-            src="/path-to-logo/logo.svg" // Replace with your logo path
-            alt="Logo"
+            src={require("../Assets/logo.svg").default} // Adjusted logo path
+            alt="Giggles & Growth"
           />
         </Link>
       </div>
