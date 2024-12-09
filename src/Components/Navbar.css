@@ -42,6 +42,9 @@
 .nav-menu-container {
   display: none;
   cursor: pointer;
+  position: absolute; /* Position the hamburger icon */
+  top: 20px; /* Adjust the spacing from the top */
+  right: 20px; /* Adjust the spacing from the right */
 }
 
 .nav-menu-container svg {
