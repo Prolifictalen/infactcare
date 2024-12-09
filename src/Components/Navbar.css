@@ -65,4 +65,34 @@
       display: block; /* Show hamburger menu */
     }
   }
+/* Adjust Drawer Links for Mobile */
+  .MuiDrawer-root .MuiList-root {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to fit links in a row */
+    gap: 10px; /* Add spacing between items */
+    justify-content: center; /* Center align the items */
+  }
+
+  .MuiDrawer-root .MuiListItem-root {
+    width: auto; /* Let the width of items adjust */
+    padding: 10px;
+  }
+
+  .MuiDrawer-root .MuiListItemButton-root {
+    text-align: center;
+    justify-content: center; /* Align text in the center */
+  }
+
+  .MuiDrawer-root .MuiListItemText-root {
+    text-align: center;
+    color: #4c4c4c; /* Default link color */
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .MuiDrawer-root .MuiListItemText-root:hover {
+    color: #734c29; /* Theme hover color */
+  }
+}
   
