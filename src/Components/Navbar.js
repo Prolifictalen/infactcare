@@ -34,19 +34,19 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Links */}
-      <div className="nav-links-container">
-        {menuOptions.map((menu) => (
-          <Link
-            key={menu.text}
-            to={menu.path}
-            className={`nav-link ${
-              location.pathname === menu.path ? "active-link" : ""
-            }`}
-          >
-            {menu.text}
-          </Link>
-        ))}
-      </div>
+      //<div className="nav-links-container">
+        //{menuOptions.map((menu) => (
+        //  <Link
+           // key={menu.text}
+           // to={menu.path}
+           // className={`nav-link ${
+             // location.pathname === menu.path ? "active-link" : ""
+           // }`}
+         // >
+          //  {menu.text}
+         // </Link>
+       // ))}
+     // </div>
 
       {/* Mobile Menu Button */}
       <div className="nav-menu-container">
