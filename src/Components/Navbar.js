@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Logo from "../Assets/logo.svg"; // Replace with your actual logo file
 import { HiOutlineBars3 } from "react-icons/hi2"; // Mobile menu icon
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const location = useLocation();
 
   const menuOptions = [
     { text: "Home", path: "/" },
@@ -17,37 +15,14 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <div className="nav-logo-container">
-        <img className="logo" src={Logo} alt="Giggles & Growth" />
-      </div>
-
-      {/* Desktop Links */}
-      <div className="nav-links-container">
-        {menuOptions.map((menu) => (
-          <Link
-            key={menu.text}
-            to={menu.path}
-            className={`nav-link ${
-              location.pathname === menu.path ? "active-link" : ""
-            }`}
-          >
-            {menu.text}
-          </Link>
-        ))}
-      </div>
-
-      {/* Mobile Menu Button */}
+      {/* Hamburger Icon */}
       <div className="nav-menu-container">
-        <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
+        <HiOutlineBars3 onClick={() => setOpenMenu(!openMenu)} />
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Drawer Menu */}
       <div className={`mobile-menu ${openMenu ? "open" : ""}`}>
-        <button
-          className="close-menu"
-          onClick={() => setOpenMenu(false)}
-        >
+        <button className="close-menu" onClick={() => setOpenMenu(false)}>
           Close
         </button>
         <ul>
@@ -55,9 +30,7 @@ const Navbar = () => {
             <li key={menu.text}>
               <Link
                 to={menu.path}
-                className={`mobile-link ${
-                  location.pathname === menu.path ? "active-link" : ""
-                }`}
+                className="mobile-link"
                 onClick={() => setOpenMenu(false)}
               >
                 {menu.text}
