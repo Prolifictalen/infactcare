@@ -62,7 +62,10 @@ const Navbar = () => {
       {/* Mobile Menu Button (Visible only on Mobile) */}
       {isMobile && (
         <div className="nav-menu-container">
-          <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
+          <HiOutlineBars3 
+            onClick={() => setOpenMenu(true)} 
+            style={{ fontSize: '32px', color: '#4c4c4c', cursor: 'pointer' }} // Increase size
+          />
         </div>
       )}
 
@@ -70,7 +73,7 @@ const Navbar = () => {
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
         <Box
           sx={{
-            width: '100%',
+            width: 250, // Adjust drawer width
             padding: '20px',
           }}
           role="presentation"
@@ -79,9 +82,9 @@ const Navbar = () => {
           <List
             sx={{
               display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              width: '100%',
+              flexDirection: 'column', // Vertical layout
+              gap: '10px', // Space between items
+              alignItems: 'center', // Center items horizontally
             }}
           >
             {menuOptions.map((menu) => (
