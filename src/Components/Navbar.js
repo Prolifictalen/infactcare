@@ -53,29 +53,28 @@ const Navbar = () => {
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
 
-      {/* Mobile Drawer Menu */}
-      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
-        <Box
-          sx={{ width: 250 }}
-          role="presentation"
-          onClick={() => setOpenMenu(false)}
-        >
-          <List>
-            {menuOptions.map((menu) => (
-              <ListItem key={menu.text} disablePadding>
-                <ListItemButton component={Link} to={menu.path}>
-                  <ListItemText
-                    primary={menu.text}
-                    className={`${
-                      location.pathname === menu.path ? "active-link" : ""
-                    }`}
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
+  <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
+  <Box
+    sx={{ width: "250px" }}
+    role="presentation"
+    onClick={() => setOpenMenu(false)}
+  >
+    <List>
+      {menuOptions.map((menu) => (
+        <ListItem key={menu.text} disablePadding>
+          <ListItemButton component={Link} to={menu.path}>
+            <ListItemText
+              primary={menu.text}
+              className={`${
+                location.pathname === menu.path ? "active-link" : ""
+              }`}
+            />
+          </ListItemButton>
+        </ListItem>
+      ))}
+    </List>
+  </Box>
+</Drawer>
     </nav>
   );
 };
