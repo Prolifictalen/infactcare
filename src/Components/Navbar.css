@@ -1,97 +1,67 @@
 /* General Navbar Styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Logo Styling */
-  .nav-logo-container .logo {
-    height: 50px;
-    cursor: pointer;
-  }
-  
-  /* Desktop Links */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.nav-logo-container .logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Desktop Links */
+.nav-links-container {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #4c4c4c; /* Default link color */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Highlight Active Link */
+.nav-link.active-link {
+  color: #734c29; /* Theme color for active link */
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  color: #734c29;
+}
+
+/* Mobile Menu Button */
+.nav-menu-container {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-menu-container svg {
+  font-size: 24px;
+  color: #4c4c4c;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
   .nav-links-container {
-    display: flex;
-    gap: 20px;
+    display: none; /* Hide desktop links */
   }
-  
-  .nav-link {
-    text-decoration: none;
-    font-size: 16px;
-    color: #4c4c4c; /* Default link color */
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  /* Highlight Active Link */
-  .nav-link.active-link {
-    color: #734c29; /* Theme color for active link */
-  }
-  
-  /* Hover Effect */
-  .nav-link:hover {
-    color: #734c29;
-  }
-  
-  /* Mobile Menu Button */
+
   .nav-menu-container {
-    display: none;
-    cursor: pointer;
-  }
-  
-  .nav-menu-container svg {
-    font-size: 24px;
-    color: #4c4c4c;
-  }
-  
-  /* Drawer Active Link */
-  .MuiDrawer-root .active-link {
-    color: #734c29;
-    font-weight: bold;
-  }
-  
-  /* Responsive Design for Mobile */
-  @media (max-width: 768px) {
-    .nav-links-container {
-      display: none; /* Hide desktop links */
-    }
-  
-    .nav-menu-container {
-      display: block; /* Show hamburger menu */
-    }
-  }
- /* Adjust Drawer Links for Mobile */
-  .MuiDrawer-root .MuiList-root {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px; /* Add spacing between items */
-    padding: 10px 20px; /* Add some padding inside the drawer */
-  }
-
-  .MuiDrawer-root .MuiListItem-root {
-    width: 100%; /* Ensure items take full width */
-  }
-
-  .MuiDrawer-root .MuiListItemButton-root {
-    text-align: left;
-    padding: 10px 20px; /* Add padding for better touch target size */
-  }
-
-  .MuiDrawer-root .MuiListItemText-root {
-    font-size: 18px; /* Increase font size for readability */
-    color: #4c4c4c; /* Default link color */
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .MuiDrawer-root .MuiListItemText-root:hover {
-    color: #734c29; /* Theme hover color */
+    display: block; /* Show hamburger menu */
   }
 }
-  
+
+/* Drawer Active Link */
+.MuiDrawer-root .active-link {
+  color: #734c29;
+  font-weight: bold;
+}
