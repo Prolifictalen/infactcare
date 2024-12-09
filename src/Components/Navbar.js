@@ -43,31 +43,29 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Drawer Menu */}
-      {openMenu && (
-        <div className="mobile-menu">
-          <button
-            className="close-menu"
-            onClick={() => setOpenMenu(false)}
-          >
-            Close
-          </button>
-          <ul>
-            {menuOptions.map((menu) => (
-              <li key={menu.text}>
-                <Link
-                  to={menu.path}
-                  className={`mobile-link ${
-                    location.pathname === menu.path ? "active-link" : ""
-                  }`}
-                  onClick={() => setOpenMenu(false)}
-                >
-                  {menu.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className={`mobile-menu ${openMenu ? "open" : ""}`}>
+        <button
+          className="close-menu"
+          onClick={() => setOpenMenu(false)}
+        >
+          Close
+        </button>
+        <ul>
+          {menuOptions.map((menu) => (
+            <li key={menu.text}>
+              <Link
+                to={menu.path}
+                className={`mobile-link ${
+                  location.pathname === menu.path ? "active-link" : ""
+                }`}
+                onClick={() => setOpenMenu(false)}
+              >
+                {menu.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
