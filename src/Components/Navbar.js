@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import Logo from "../Assets/logo.svg"; // Replace with your actual logo file
 import { HiOutlineBars3 } from "react-icons/hi2"; // Mobile menu icon
 import { Link, useLocation } from "react-router-dom";
-import {
-  Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
-
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -23,7 +14,6 @@ const Navbar = () => {
     { text: "Blog", path: "/blog" },
     { text: "Shopping", path: "/shopping" },
   ];
-
 
   return (
     <nav className="navbar">
@@ -53,28 +43,31 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Drawer Menu */}
-      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
-        <Box
-          sx={{ width: 250 }}
-          role="presentation"
-          onClick={() => setOpenMenu(false)}
-        >
-          <List>
+      {openMenu && (
+        <div className="mobile-menu">
+          <button
+            className="close-menu"
+            onClick={() => setOpenMenu(false)}
+          >
+            Close
+          </button>
+          <ul>
             {menuOptions.map((menu) => (
-              <ListItem key={menu.text} disablePadding>
-                <ListItemButton component={Link} to={menu.path}>
-                  <ListItemText
-                    primary={menu.text}
-                    className={`${
-                      location.pathname === menu.path ? "active-link" : ""
-                    }`}
-                  />
-                </ListItemButton>
-              </ListItem>
+              <li key={menu.text}>
+                <Link
+                  to={menu.path}
+                  className={`mobile-link ${
+                    location.pathname === menu.path ? "active-link" : ""
+                  }`}
+                  onClick={() => setOpenMenu(false)}
+                >
+                  {menu.text}
+                </Link>
+              </li>
             ))}
-          </List>
-        </Box>
-      </Drawer>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
