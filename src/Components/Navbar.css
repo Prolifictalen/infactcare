@@ -9,19 +9,10 @@
 }
 
 /* Logo Styling */
-/* Center the Logo */
-.nav-logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* Adjust if needed for the container height */
-}
-
 .nav-logo-container .logo {
   height: 50px;
   cursor: pointer;
 }
-
 
 /* Desktop Links */
 .nav-links-container {
@@ -54,7 +45,7 @@
 }
 
 .nav-menu-container svg {
-  font-size: 24px;
+  font-size: 32px; /* Adjust hamburger size */
   color: #4c4c4c;
 }
 
