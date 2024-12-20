@@ -7,6 +7,7 @@ import About from './Components/About';
 import Blog from "./Components/Blog";
 import Navbar from './Components/Navbar';
 import Shopping from "./Components/Shopping";
+import Vaccine from "./Components/Vaccine";
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Signup" element={<Signup />}></Route>
           <Route path="/Shopping" element={<Shopping />}></Route>
           <Route path="/Blog" element={<Blog />}></Route>
+          <Route path="/Vaccine" element={<Vaccine />} />
           
           
 
