@@ -29,11 +29,6 @@ import play9 from "../Assets/play9.jpg";
 import play10 from "../Assets/play10.jpg";
 import play12 from "../Assets/play12.jpg";
 import play8 from "../Assets/play8.jpg";
-
-
-
-
-
 const Blog = () => {
   const blogCategories = [
     {
