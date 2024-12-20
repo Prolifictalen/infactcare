@@ -1,6 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
 import BannerImage from "../Assets/banner_img.jpeg";
+import ParentingImage from "../Assets/parenting.jpg";
+import shopping from "../Assets/shopping.jpg";
+import Food1 from "../Assets/Food1.jpg";
+import vaccine from "../Assets/vaccine.jpg";
+
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -11,8 +15,8 @@ const Home = () => {
       <div className="home-container">
         <div className="home-text-section">
           <h1 className="heading">
-            Giggles & Growth: Your Trusted Guide to Infant Care
-          </h1>
+            Giggles & Growth </h1>
+          <h2>  Your Trusted Guide to Infant Care</h2>
           <p className="description">
             Discover expert guidance and joyful parenting on Giggles and Growth
             – your ultimate companion for nurturing happy, healthy infants.
@@ -25,7 +29,53 @@ const Home = () => {
         </div>
         <img src={BannerImage} className="home-image" alt="banner"></img>
       </div>
-
+      {/* Interactive Features Section */}
+      <div className="interactive-section">
+        <h2>Explore Our Features</h2>
+        <p className="interactive-description">
+          Click on any feature below to dive into a world of insights, guidance,
+          and resources.
+        </p>
+        <div className="interactive-cards">
+          <Link to="/blog" className="card">
+            <img src={Food1} alt="food1" />
+            <div className="card-content">
+              <h3>Baby Nutrition</h3>
+              <p>Explore our blogs on nutrition for a healthy and happy baby.</p>
+            </div>
+          </Link>
+          <Link to="/blog" className="card">
+            <img src={ParentingImage} alt="Parenting Tips" />
+            <div className="card-content">
+              <h3>Parenting Tips</h3>
+              <p>
+                Discover practical advice and tips to make parenting easier.
+              </p>
+            </div>
+          </Link>
+          <Link to="/shopping" className="card">
+            <img src={shopping} alt="Shopping" />
+            <div className="card-content">
+              <h3>Shopping for Babies</h3>
+              <p>
+                Find essential items and curated products for your little one.
+              </p>
+            </div>
+          </Link>
+        </div>
+        <div className="interactive-cards">
+          <Link to="/Vaccine" className="card">
+            <img src={vaccine} alt="Vaccine Guide" />
+            <div className="card-content">
+              <h3>Vaccine Guide</h3>
+              <p>
+                Learn about essential vaccines for your baby based on WHO
+                recommendations.
+              </p>
+            </div>
+          </Link>
+        </div>
+      </div>
       {/* About Section */}
       <div className="about-section">
         <h2>About Giggles & Growth</h2>
@@ -47,10 +97,11 @@ const Home = () => {
         <div className="footer-middle">
           <h4>Explore</h4>
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li></li>
-            <li>Blog</li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/shopping">Shopping</a></li>
+            
+            
           </ul>
         </div>
         <div className="footer-right">
