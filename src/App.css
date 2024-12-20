@@ -3,148 +3,323 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Reem Kufi", sans-serif, Arial, sans-serif;
+  font-family: "Reem Kufi", Arial, sans-serif;;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: #f6f6f6;
-  color: #333;
-  line-height: 1.6;
 }
 
 .App {
   min-height: 100vh;
-  max-width: 1200px;
+  width: 90vw;
+  max-width: 1900px;
   margin: 0 auto;
-  padding: 20px;
-  overflow-x: hidden;
 }
 
-/* Navbar Styles */
+/* Navbar */
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  max-height: 90px;
+  margin-top: 0px;
 }
 
 .nav-links-container a {
-  margin-right: 20px;
+  margin-right: 3rem;
   text-decoration: none;
-  color: #333;
+  color: black;
+  font-size: 1.1rem;
   font-weight: 600;
-}
-
-.nav-links-container a:hover {
-  color: #734c29;
 }
 
 .logo {
   max-width: 100px;
+  min-width: 80px;
   cursor: pointer;
+  margin-top: 40px;
 }
 
-/* Interactive Cards */
+/* Home Section */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+  position: relative;
+}
+
+.home-text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #4c4c4c;
+  max-width: 600px;
+}
+
+.description {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 500px;
+  color: #6a6a6a;
+  margin: 1.5rem 0;
+}
+
+.secondary-button {
+  padding: 12px 24px;
+  background-color: #734c29; /* Theme color */
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.secondary-button svg {
+  margin-left: 8px;
+}
+
+.secondary-button:hover {
+  background-color: #3e3232;
+}
+
+.button-container {
+  margin-bottom: 40px; /* Adds space below the button */
+}
+
+.home-image {
+  flex: 1;
+  max-width: 40%;
+  border-radius: 10px;
+}
+
+/* Interactive Cards Section */
+.interactive-section {
+  padding: 40px 0;
+  background-color: #fdf8f5; /* Light beige background */
+  text-align: center;
+}
+
+.interactive-section h2 {
+  font-size: 2.5rem;
+  color: #734c29;
+  margin-bottom: 20px;
+}
+
+.interactive-description {
+  font-size: 1.2rem;
+  color: #6a6a6a;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .interactive-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  padding: 20px 0;
+  gap: 20px;
 }
 
 .card {
-  background: #fff;
-  border-radius: 8px;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
   overflow: hidden;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
+  text-decoration: none;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
 }
 
 .card-content {
   padding: 15px;
+  text-align: center;
 }
 
 .card-content h3 {
-  margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #734c29;
+  color: #4c4c4c;
+  margin-bottom: 10px;
 }
 
 .card-content p {
   font-size: 1rem;
-  color: #555;
+  color: #6a6a6a;
 }
 
-/* Footer Styles */
+
+/* About Section */
+.about-section {
+  background-color: #e3d8c7;
+  padding: 40px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #734c29;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Footer */
+/* Footer */
 .footer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
-  background: #734c29;
-  color: #fff;
+  align-items: flex-start;
+  background-color: #734c29;
+  color: white;
+  padding: 20px 40px;
+  flex-wrap: wrap;
 }
 
-.footer-section {
+.footer-left,
+.footer-middle,
+.footer-right {
   flex: 1;
-  margin: 10px;
+  margin-bottom: 1rem;
 }
 
-.footer-section h4 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+.footer-left h3,
+.footer-middle h4,
+.footer-right h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-.footer-section ul {
+.footer-left p,
+.footer-middle ul,
+.footer-right p {
+  font-size: 1rem;
+}
+
+.footer-middle ul {
   list-style: none;
   padding: 0;
 }
 
-.footer-section ul li {
-  margin-bottom: 8px;
+.footer-middle ul li {
+  margin-bottom: 0.5rem;
 }
 
-.footer-section ul li a {
-  text-decoration: none;
-  color: #fff;
+.footer-middle ul li a {
+  color: white; /* Simple white text for the links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Optional: Make the text slightly bold */
 }
 
-.footer-section ul li a:hover {
-  text-decoration: underline;
+.footer-middle ul li a:hover {
+  color: white; /* Keep white color on hover */
+  text-decoration: none; /* No underline or style changes */
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
+@media (max-width: 1023px) {
+  .home-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
   }
 
-  .interactive-cards {
-    flex-direction: column;
+  .home-text-section {
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
   }
 
-  .card {
-    width: 90%;
+  .home-image {
+    max-width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .heading {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .description {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .secondary-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 
   .footer {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    flex: none;
+    margin-bottom: 2rem;
+  }
+
+  .interactive-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .secondary-button {
+    padding: 0.7rem 1.5rem;
+  }
+
+  .card img {
+    height: 120px;
   }
 }
