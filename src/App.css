@@ -6,20 +6,21 @@
   font-family: "Reem Kufi", sans-serif !important;
 }
 
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  max-width: 100%; /* Restrict body width */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: #f6f6f6;
 }
 
 .App {
   min-height: 100vh;
-  padding: 0 1rem; /* Add padding without causing overflow */
-  width: 100%;
-  max-width: 100%; /* Ensure no horizontal overflow */
+  width: 90vw;
+  max-width: 1900px;
   margin: 0 auto;
 }
 
@@ -29,25 +30,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   max-height: 90px;
-  margin-top: 0;
-  flex-wrap: wrap; /* Ensure it wraps on small screens */
-}
-
-.nav-links-container {
-  display: flex;
-  flex-wrap: wrap; /* Allow links to wrap */
-  justify-content: center;
-  max-width: 100%; /* Prevent horizontal overflow */
+  margin-top: 0px;
 }
 
 .nav-links-container a {
-  margin: 0.5rem;
+  margin-right: 3rem;
   text-decoration: none;
   color: black;
   font-size: 1.1rem;
   font-weight: 600;
-  flex: 1; /* Allow links to shrink */
-  text-align: center; /* Align links in the center */
 }
 
 .logo {
@@ -64,7 +55,6 @@ nav {
   justify-content: space-between;
   padding-top: 3rem;
   position: relative;
-  flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
 .home-text-section {
@@ -79,7 +69,6 @@ nav {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #4c4c4c;
   max-width: 600px;
-  text-align: left;
 }
 
 .description {
@@ -120,6 +109,76 @@ nav {
   border-radius: 10px;
 }
 
+/* Interactive Cards Section */
+.interactive-section {
+  padding: 40px 0;
+  background-color: #fdf8f5; /* Light beige background */
+  text-align: center;
+}
+
+.interactive-section h2 {
+  font-size: 2.5rem;
+  color: #734c29;
+  margin-bottom: 20px;
+}
+
+.interactive-description {
+  font-size: 1.2rem;
+  color: #6a6a6a;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.interactive-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  text-decoration: none;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  color: #4c4c4c;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #6a6a6a;
+}
+
+
 /* About Section */
 .about-section {
   background-color: #e3d8c7;
@@ -140,24 +199,22 @@ nav {
 }
 
 /* Footer */
+/* Footer */
 .footer {
   display: flex;
-  flex-direction: row; /* Default for larger screens */
-  justify-content: space-between; /* Space between sections */
-  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between;
+  align-items: flex-start;
   background-color: #734c29;
   color: white;
   padding: 20px 40px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  flex-wrap: wrap;
 }
 
-/* Footer Sections */
 .footer-left,
 .footer-middle,
 .footer-right {
   flex: 1;
   margin-bottom: 1rem;
-  text-align: left; /* Default alignment for desktop */
 }
 
 .footer-left h3,
@@ -171,43 +228,26 @@ nav {
 .footer-middle ul,
 .footer-right p {
   font-size: 1rem;
-  line-height: 1.5; /* Improve readability */
 }
 
 .footer-middle ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .footer-middle ul li {
   margin-bottom: 0.5rem;
 }
 
-/* Responsive Footer Styling for Mobile */
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column; /* Stack sections vertically */
-    align-items: center; /* Center-align content */
-    text-align: center; /* Center text within each section */
-  }
+.footer-middle ul li a {
+  color: white; /* Simple white text for the links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Optional: Make the text slightly bold */
+}
 
-  .footer-left,
-  .footer-middle,
-  .footer-right {
-    width: 100%; /* Take full width */
-    margin-bottom: 2rem; /* Add space between sections */
-  }
-
-  .footer-middle ul li {
-    margin-bottom: 1rem; /* Increase spacing for better touch usability */
-  }
-
-  .footer-left h3,
-  .footer-middle h4,
-  .footer-right h4 {
-    font-size: 1.2rem; /* Adjust font size for mobile */
-  }
+.footer-middle ul li a:hover {
+  color: white; /* Keep white color on hover */
+  text-decoration: none; /* No underline or style changes */
 }
 
 /* Responsive Styles */
@@ -256,19 +296,13 @@ nav {
     margin-bottom: 2rem;
   }
 
-  nav {
-    flex-direction: column; /* Stack items vertically */
+  .interactive-cards {
+    flex-direction: column;
     align-items: center;
   }
 
-  .nav-links-container {
-    flex-direction: column;
-  }
-
-  .nav-links-container a {
-    margin: 10px 0;
-    font-size: 1rem;
-    width: 100%;
+  .card {
+    width: 90%;
   }
 }
 
@@ -283,5 +317,9 @@ nav {
 
   .secondary-button {
     padding: 0.7rem 1.5rem;
+  }
+
+  .card img {
+    height: 120px;
   }
 }
