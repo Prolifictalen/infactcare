@@ -65,7 +65,7 @@ const Shopping = () => {
 
   return (
     <div className="shopping-page-container">
-      <h1>Groom ypur Child by Shopping new Items </h1>
+      <h1>Groom your Child by Shopping New Items </h1>
       <p className="shopping-description">
         Discover trusted platforms for purchasing high-quality infant care products. Explore a wide range of options tailored to your baby's needs.
       </p>
