@@ -1,26 +1,40 @@
+/* General Blog Container */
 .blog-container {
   max-width: 900px;
   margin: 30px auto;
   text-align: center;
   font-family: "Arial", sans-serif;
+  background-color: #fdf8f5; /* Light beige background */
+  border: 1px solid #e4d7cc; /* Subtle border */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Blog Headings */
 .blog-container h1,
 .blog-container h2 {
   font-size: 2.5rem;
   color: #5a4235; /* Theme dark brown */
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .blog-container p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: #4c4c4c;
+  line-height: 1.6;
 }
 
+/* Blog Categories List */
 .blog-categories {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .blog-categories li {
@@ -28,29 +42,183 @@
   color: #5a4235; /* Theme dark brown */
   cursor: pointer;
   padding: 10px;
-  transition: all 0.3s;
+  border: 1px solid #e4d7cc; /* Subtle border */
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 150px; /* Fixed width for uniformity */
 }
 
 .blog-categories li:hover {
   background-color: #f4eade; /* Light beige */
-  border-radius: 5px;
+  border: 1px solid #5a4235; /* Highlight border */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Selected Category Content */
 .blog-category-content {
   padding: 20px;
   text-align: left;
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e4d7cc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.blog-category-content h2 {
+  color: #5a4235;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.blog-category-content img {
+  margin: 10px 5px;
+  border-radius: 8px;
+  border: 1px solid #e4d7cc;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-category-content img:hover {
+  transform: scale(1.1);
+  border-color: #5a4235; /* Dark brown border on hover */
+}
+
+/* Button Styling */
 .back-button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #5a4235;
+  background-color: #5a4235; /* Theme dark brown */
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #3e2c27;
+  background-color: #3e2c27; /* Darker shade on hover */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 15px;
+  }
+
+  .blog-categories li {
+    width: 120px;
+    font-size: 1rem;
+  }
+
+  .blog-category-content img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .back-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Updated Card Design */
+.play-ideas-section {
+  margin-top: 30px;
+  text-align: center;
+}
+.age-group-container {
+  margin: 20px auto;
+  max-width: 800px;
+}
+.idea-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 15px 0;
+  background: linear-gradient(135deg, #fef9f6, #f4eade); /* Light beige gradient */
+  border: 1px solid #e4d7cc; /* Subtle border */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.idea-card:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  background: linear-gradient(135deg, #fdf0e3, #f4eade); /* Slightly warmer gradient on hover */
+}
+
+.idea-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background: radial-gradient(circle, #f4eade, #e9cdbb); /* Theme-based gradient */
+  border-radius: 50%; /* Circular icons */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #5a4235; /* Theme dark brown */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Icon shadow for depth */
+}
+
+.idea-content {
+  text-align: left;
+}
+
+.idea-content b {
+  font-size: 1.3rem;
+  color: #5a4235; /* Theme dark brown */
+}
+
+.idea-content p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #4c4c4c; /* Neutral text color */
+  line-height: 1.6;
+}
+
+/* Divider Between Age Groups */
+.age-group-container h4 {
+  font-size: 1.8rem;
+  color: #3e2c27; /* Slightly darker theme color */
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid #e4d7cc; /* Underline for emphasis */
+  padding-bottom: 5px;
+}
+
+/* Responsive Design for Cards */
+@media (max-width: 768px) {
+  .idea-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .idea-icon {
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .idea-content b {
+    font-size: 1.2rem;
+  }
+
+  .idea-content p {
+    font-size: 0.9rem;
+  }
+}
+
